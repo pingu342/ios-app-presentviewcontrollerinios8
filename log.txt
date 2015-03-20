@@ -1,0 +1,12 @@
+
+Xcode6
+Base SDK: iOS 8.1
+Deployment Target: iOS 7.0
+でビルドしたアプリ
+アプリを実行するデバイスのiOSバージョンによって動作が違う。
+
+iOS 8.1.3 (iPhone6 Plus)
+ViewController: -[ViewController viewWillDisappear:]ViewController2: -[ViewController2 viewWillAppear:]ViewController2: -[ViewController2 viewDidAppear:]ViewController: -[ViewController viewDidDisappear:]ViewController2: -[ViewController2 viewWillDisappear:]ViewController3: -[ViewController3 viewWillAppear:]ViewController3: -[ViewController3 viewDidAppear:]ViewController2: -[ViewController2 viewDidDisappear:]ViewController3: -[ViewController3 viewWillDisappear:]ViewController2: -[ViewController2 viewWillAppear:]ViewController2: -[ViewController2 viewDidAppear:]ViewController3: -[ViewController3 viewDidDisappear:]ViewController2: -[ViewController2 viewWillDisappear:]ViewController: -[ViewController viewWillAppear:]ViewController: -[ViewController viewDidAppear:]ViewController2: -[ViewController2 viewDidDisappear:]
+
+iOS 7.1.2 (iPod touch)
+ViewController: -[ViewController viewWillDisappear:]ViewController2: -[ViewController2 viewWillAppear:]ViewController2: -[ViewController2 viewDidAppear:]ViewController: -[ViewController viewDidDisappear:]ViewController2: -[ViewController2 viewWillDisappear:]ViewController3: -[ViewController3 viewWillAppear:]ViewController3: -[ViewController3 viewDidAppear:]ViewController2: -[ViewController2 viewDidDisappear:]ViewController3: -[ViewController3 viewWillDisappear:]ViewController: -[ViewController viewWillAppear:]ViewController: -[ViewController viewDidAppear:]ViewController3: -[ViewController3 viewDidDisappear:]
