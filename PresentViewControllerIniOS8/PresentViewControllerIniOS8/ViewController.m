@@ -11,6 +11,8 @@
 
 @interface ViewController ()
 
+@property (nonatomic, weak) IBOutlet UISwitch *test;
+
 @end
 
 @implementation ViewController
@@ -46,8 +48,9 @@
 }
 
 - (IBAction)tapButton:(id)sender {
-	ViewController2 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
-	[self presentViewController:vc animated:YES completion:nil];
+	ViewController2 *vc2 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController2"];
+	vc2.test = self.test.isOn;
+	[self presentViewController:vc2 animated:YES completion:nil];
 }
 
 @end

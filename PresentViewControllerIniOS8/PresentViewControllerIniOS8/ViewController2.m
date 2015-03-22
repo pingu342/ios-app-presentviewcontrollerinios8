@@ -38,6 +38,10 @@
 - (void)viewWillAppear:(BOOL)animated {
 	NSLog(@"ViewController2: %s", __FUNCTION__);
 	[super viewWillAppear:animated];
+	
+	if (self.dismissing) {
+		self.view.hidden = YES;
+	}
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -56,8 +60,18 @@
 }
 
 - (IBAction)tapButton:(id)sender {
-	ViewController3 *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController3"];
-	[self presentViewController:vc animated:YES completion:nil];
+	ViewController3 *vc3 = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController3"];
+	vc3.test = self.test;
+	if (!self.test) {
+		// VC2からVC3を表示
+		[self presentViewController:vc3 animated:YES completion:nil];
+	} else {
+		// VC2を消してVC1からVC3を表示
+		UIViewController *parent = self.presentingViewController;
+		[parent dismissViewControllerAnimated:NO completion:^(void){
+			[parent presentViewController:vc3 animated:YES completion:nil];
+		}];
+	}
 }
 
 @end

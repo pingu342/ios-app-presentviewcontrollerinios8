@@ -10,4 +10,6 @@
 
 @interface ViewController3 : UIViewController
 
+@property (nonatomic) BOOL test;
+
 @end

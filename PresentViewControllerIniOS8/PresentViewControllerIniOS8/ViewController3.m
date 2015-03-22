@@ -6,6 +6,8 @@
 //  Copyright (c) 2015年 jp.saka. All rights reserved.
 //
 
+#import "ViewController.h"
+#import "ViewController2.h"
 #import "ViewController3.h"
 
 @interface ViewController3 ()
@@ -55,7 +57,16 @@
 }
 
 - (IBAction)tapButton:(id)sender {
-	[self.presentingViewController.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+	if (!self.test) {
+		// VC1->VC2->VC3の順で表示されている
+		ViewController2 *vc2 = (ViewController2 *)self.presentingViewController;
+		ViewController *vc1 = (ViewController *)vc2.presentingViewController;
+		vc2.dismissing = YES;
+		[vc1 dismissViewControllerAnimated:YES completion:nil];
+	} else {
+		// VC1->VC3の順で表示されている
+		[self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+	}
 }
 
 @end

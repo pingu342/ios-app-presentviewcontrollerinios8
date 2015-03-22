@@ -10,4 +10,7 @@
 
 @interface ViewController2 : UIViewController
 
+@property (nonatomic) BOOL test;
+@property (nonatomic) BOOL dismissing;
+
 @end
